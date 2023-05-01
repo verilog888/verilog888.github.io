@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 数字熊的小破站">
+    <meta name="keywords" content="Synopsys DC逻辑综合, 数字熊的小破站">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 数字熊的小破站</title>
+    <title>Synopsys DC逻辑综合 | 数字熊的小破站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">Synopsys DC逻辑综合</h1>
                 </div>
             </div>
         </div>
@@ -382,7 +382,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-04-25
+                    2023-05-01
                 </div>
                 
 
@@ -406,19 +406,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h2 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h2><h3 id="逻辑综合的目的"><a href="#逻辑综合的目的" class="headerlink" title="逻辑综合的目的"></a>逻辑综合的目的</h3><p>综合是把概念转化为可制造器件的转移过程。</p>
+<p>而数字IC逻辑综合则指将RTL级源码转化为门级网表的过程，即数字IC设计从这一步开始，由逻辑设计与代码编写转变为实际电路的设计与优化。</p>
+<p><img src="1.png" alt="数字IC设计流程"></p>
+<p>RTL代码根据设计文档中的时钟、模块定义等要求，描述了电路功能、寄存器结构与数量，为我们的电路设计建立详细的、在理论上能达到功能要求的理想模型。</p>
+<p>但最终我们的数字电路是要经过一系列复杂设计、验证与优化，被制造成能够稳定运行的实际电路模块的。因此，在从代码到电路（网表）的转换——逻辑综合中，为设计施加接近现实工作环境的约束是非常重要的。如果在逻辑综合环节能够做到优秀的约束与PPA（性能、功耗、面积）折衷，能很大程度减少后端CTS与布局布线时出现重大问题的概率。</p>
+<h3 id="逻辑综合的流程"><a href="#逻辑综合的流程" class="headerlink" title="逻辑综合的流程"></a>逻辑综合的流程</h3><p>逻辑综合共有转译、优化与映射三个步骤。</p>
+<p><img src="2.png" alt="数字IC设计流程"></p>
+<ul>
+<li>转译（Translation）</li>
+</ul>
+<p>将RTL级硬件描述语言转化为DC内部GTECH格式的通用门级网表，该格式与目标工艺库无关，也可输出为没有映射的ddc格式。</p>
+<ul>
+<li>优化（Optimization）</li>
+</ul>
+<p>DC对通用门级网表进行路径、逻辑与结构优化。</p>
+<ul>
+<li>映射（Mapping）</li>
+</ul>
+<p>将GTECH格式的网表用目标工艺库映射，并根据目标工艺库的延时、面积、功耗等参数，继续优化电路，直到网表满足设计者输入的各种约束（如果各种方案都无法满足约束，DC会报错，需要人为修改设计或约束）。</p>
+<p>映射得到的网表文件有两种：一种是.ddc文件，只有Synopsys的工具能够识别并打开，里面含有丰富的信息。一种是.v文件，一般与.sdc（就是综合时输入的对RTL的约束，只不过格式不同）与.sdf（包含网表连接的延时文件，综合后的该文件延时过于粗略，后端得到的该文件才较为准确）一起使用，其他工具也能够识别并打开。</p>
+<p>其余输出文件介绍：<a target="_blank" rel="noopener" href="https://blog.csdn.net/b18821622297/article/details/119751768">https://blog.csdn.net/b18821622297/article/details/119751768</a></p>
+<h3 id="TCL语法"><a href="#TCL语法" class="headerlink" title="TCL语法"></a>TCL语法</h3><h3 id="设计物体与模块划分"><a href="#设计物体与模块划分" class="headerlink" title="设计物体与模块划分"></a>设计物体与模块划分</h3><h2 id="DC工作环境与库设置"><a href="#DC工作环境与库设置" class="headerlink" title="DC工作环境与库设置"></a>DC工作环境与库设置</h2><h2 id="读入设计与约束"><a href="#读入设计与约束" class="headerlink" title="读入设计与约束"></a>读入设计与约束</h2><h3 id="读入设计"><a href="#读入设计" class="headerlink" title="读入设计"></a>读入设计</h3><h3 id="时序路径约束"><a href="#时序路径约束" class="headerlink" title="时序路径约束"></a>时序路径约束</h3><h3 id="工作环境约束"><a href="#工作环境约束" class="headerlink" title="工作环境约束"></a>工作环境约束</h3><h3 id="设计规则约束"><a href="#设计规则约束" class="headerlink" title="设计规则约束"></a>设计规则约束</h3><h3 id="面积约束"><a href="#面积约束" class="headerlink" title="面积约束"></a>面积约束</h3><h2 id="DC综合优化"><a href="#DC综合优化" class="headerlink" title="DC综合优化"></a>DC综合优化</h2><h2 id="综合后处理"><a href="#综合后处理" class="headerlink" title="综合后处理"></a>综合后处理</h2><h3 id="网表等文件输出"><a href="#网表等文件输出" class="headerlink" title="网表等文件输出"></a>网表等文件输出</h3><h3 id="形式验证"><a href="#形式验证" class="headerlink" title="形式验证"></a>形式验证</h3><h2 id="参考文章与书籍"><a href="#参考文章与书籍" class="headerlink" title="参考文章与书籍"></a>参考文章与书籍</h2><ul>
+<li><strong><a target="_blank" rel="noopener" href="http://www.cnblogs.com/IClearner/">http://www.cnblogs.com/IClearner/</a></strong></li>
+<li>《专用集成电路设计实用教程》 虞希清</li>
+</ul>
 
                 
             </div>
@@ -445,7 +457,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://verilog888.github.io/2023/04/25/hello-world/">https://verilog888.github.io/2023/04/25/hello-world/</a>
+                    <a href="https://verilog888.github.io/2023/05/01/synopsysdc-syn/">https://verilog888.github.io/2023/05/01/synopsysdc-syn/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -650,9 +662,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/05/01/synopsysdc-syn/">
                     <div class="card-image">
@@ -670,9 +683,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -681,6 +694,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -688,7 +702,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2023/04/25/hello-world/">
@@ -718,7 +732,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
